@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "enter the service"
+read ser
+if command -v $ser
+then
+   echo "$ser is installed"
+   $ser --version
+else
+   echo "$ser is not installed"
+   sudo yum install $ser -y
+   echo "$ser is installed"
+   $ser --version
+fi   
